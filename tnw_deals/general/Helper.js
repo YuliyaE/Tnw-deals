@@ -1,11 +1,11 @@
-class AbstractElement {
+class Helper {
 
     waitAndClick(element) {
         return this.waitUntilClickable(element).then(() => {
             console.log(`wait and click ${element.locator()} `)
             return element.click();
         }).catch(message => {
-            Promise.reject(message);
+            Promise.reject(message.message);
         })
     }
     
@@ -15,4 +15,4 @@ class AbstractElement {
 
 }
 
-module.exports = new AbstractElement();
+module.exports = new Helper();

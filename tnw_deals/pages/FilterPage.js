@@ -1,4 +1,4 @@
-const AbstractElement = require('../general/abstract.methods.js');
+const Helper = require('../general/Helper.js');
 
 class FilterPage{
     constructor(){
@@ -11,11 +11,9 @@ class FilterPage{
     }
 
     chooseRandomProduct(){
-        return this.products.then((items) => {
-            console.log(items.length);
-            let number = (Math.floor((Math.random() * 408)/2));
-            console.log(number);
-            return AbstractElement.waitAndClick(items[number]);
+        return this.products.count().then((items) => {
+            let number = (Math.floor((Math.random() * items)/2));
+            return Helper.waitAndClick(this.products.get(number));
         })
     }
 

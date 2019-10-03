@@ -1,4 +1,4 @@
-const AbstractElement = require('../general/abstract.methods.js');
+const Helper = require('../general/Helper.js');
 
 class LoginPage{
     constructor(){
@@ -16,7 +16,7 @@ class LoginPage{
     }
 
     clickLogin(){
-        return AbstractElement.waitAndClick(this.loginButton);
+        return Helper.waitAndClick(this.loginButton);
     }
 
 }

@@ -1,19 +1,23 @@
 const { Given, When, Then } = require('cucumber');
 const { defineSupportCode } = require('cucumber');
 const expect = require('expect');
-const MainPage = require('../pages/MainPage.js')
-const FilterPage = require('../pages/FilterPage.js');
-const ProductPage = require('../pages/ProductPage.js');
-const expectedNotice = 'Your cart is empty. Continue Shopping!';
+const MainPage = require('../../pages/MainPage.js')
+const FilterPage = require('../../pages/FilterPage.js');
+const ProductPage = require('../../pages/ProductPage.js');
+const testData = require("../../properties/data.json");
+//const expectedNotice = 'Your cart is empty. Continue Shopping!';
+
+//let user = '{ "expectedNotice": "Your cart is empty. Continue Shopping!"}';
+let expectedNotice = (JSON.parse(testData)).expectedNotice;
 
 defineSupportCode(({ setDefaultTimeout }) => {
-    setDefaultTimeout(20 * 1000);
+    setDefaultTimeout(30 * 1000);
 });
 
-
 Given('Open main page', function () {
-    browser.manage().window().maximize();
-    return MainPage.open();
+    return MainPage.open().then(() => {
+        return MainPage.closeDiscountWindow();
+    })
 });
 
 Then('Open business category', function () {
@@ -23,14 +27,15 @@ Then('Open business category', function () {
 });
 
 When('Choose random product', function () {
+    MainPage.closeDiscountWindow();
     return FilterPage.chooseRandomProduct();
 });
 
-Then('Check product name', function () {
+Then('Remove product from cart', function () {
     return ProductPage.clickAddToCart().then(() => {
         return ProductPage.removeProductFromCart();
     }).then(() => {
-      return ProductPage.getCartNotice();
+        return ProductPage.getCartNotice();
     }).then((notice) => {
         expect(expectedNotice).toEqual(notice);
     })

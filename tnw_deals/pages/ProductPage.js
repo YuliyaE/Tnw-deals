@@ -1,4 +1,4 @@
-const AbstractElement = require('../general/abstract.methods.js');
+const Helper = require('../general/Helper.js');
 
 class ProductPage {
     constructor() {
@@ -9,7 +9,7 @@ class ProductPage {
     }
 
     clickAddToCart() {
-        return AbstractElement.waitAndClick(this.addToCartButton);
+        return Helper.waitAndClick(this.addToCartButton);
     }
 
     getActualProductName(){
@@ -17,7 +17,7 @@ class ProductPage {
     }
 
     removeProductFromCart(){
-        return AbstractElement.waitAndClick(this.removeProduct);
+        return Helper.waitAndClick(this.removeProduct);
     }
 
     getCartNotice(){
