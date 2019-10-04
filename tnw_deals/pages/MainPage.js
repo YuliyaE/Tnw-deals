@@ -1,5 +1,5 @@
 const URL = 'https://deals.thenextweb.com/';
-const Helper = require('../general/Helper.js');
+const Helper = require('../utils/Helper.js');
 
 class MainPage {
     constructor() {
@@ -32,7 +32,6 @@ class MainPage {
             }
         })
     }
-
 }
 
 module.exports = new MainPage();

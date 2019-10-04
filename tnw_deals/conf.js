@@ -15,8 +15,7 @@ exports.config = {
     ],
 
     cucumberOpts: {
-        require: 'TNW_tests/steps/AddToCartTest.steps.js',
-    //  require: 'TNW_tests/steps/RemoveFromCartTest.steps.js',
+        require: 'TNW_tests/steps/*.js',
         format: 'summary'
     },
 

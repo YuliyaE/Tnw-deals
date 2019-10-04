@@ -1,3 +1,5 @@
+const TIME_OUT = 60000;
+
 class Helper {
 
     waitAndClick(element) {
@@ -10,7 +12,7 @@ class Helper {
     }
     
     waitUntilClickable(element) {
-        return browser.wait(protractor.ExpectedConditions.elementToBeClickable(element), 60000);
+        return browser.wait(protractor.ExpectedConditions.elementToBeClickable(element), TIME_OUT);
     }
 
 }

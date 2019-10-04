@@ -1,4 +1,4 @@
-const Helper = require('../general/Helper.js');
+const Helper = require('../utils/Helper.js');
 
 class LoginPage{
     constructor(){
