@@ -1,7 +1,5 @@
 # Tnw-deals
 
-___
-
 ### Installation
 In order to install all dependencies:
 
