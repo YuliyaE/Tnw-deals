@@ -27,7 +27,7 @@ class MainPage {
 
     closeDiscountWindow() {
         return this.discountWindow.isPresent().then(result => {
-            if (result == true) {
+            if (result) {
                 return Helper.waitAndClick(this.discountWindow);
             }
         })

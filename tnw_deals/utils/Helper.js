@@ -4,10 +4,9 @@ class Helper {
 
     waitAndClick(element) {
         return this.waitUntilClickable(element).then(() => {
-            console.log(`wait and click ${element.locator()} `)
             return element.click();
-        }).catch(message => {
-            Promise.reject(message.message);
+        }).catch(error => {
+            Promise.reject(error.message);
         })
     }
     
@@ -15,6 +14,9 @@ class Helper {
         return browser.wait(protractor.ExpectedConditions.elementToBeClickable(element), TIME_OUT);
     }
 
-}
+    getRandomNumber(elements){
+        return (Math.floor((Math.random() * elements)/2));
+    }
 
+}
 module.exports = new Helper();

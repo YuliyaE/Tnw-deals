@@ -1,19 +1,18 @@
 const Helper = require('../utils/Helper.js');
 
-class FilterPage{
-    constructor(){
+class FilterPage {
+    constructor() {
         this.productName = element(by.xpath("//*[@class='col-md-12 breadcrumbs' or @class='col-xs-12']/h1"));
         this.products = element.all(by.xpath("//*[@class='sale-detail-title']"));
     }
 
-    getProductName(){
+    getProductName() {
         return this.productName.getText();
     }
 
-    chooseRandomProduct(){
+    chooseRandomProduct() {
         return this.products.count().then((items) => {
-            let number = (Math.floor((Math.random() * items)/2));
-            return Helper.waitAndClick(this.products.get(number));
+            return Helper.waitAndClick(this.products.get(Helper.getRandomNumber(items)));
         })
     }
 

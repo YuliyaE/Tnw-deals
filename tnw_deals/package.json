@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "TNW Deals",
     "scripts": {
-        "test": "bmw_test/features/*.feature"
+        "test": "TNW_tests/features/*.feature"
     },
     "dependencies": {
         "cucumber": "^5.1.0",
