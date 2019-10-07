@@ -7,6 +7,7 @@
     },
     "dependencies": {
         "cucumber": "^5.1.0",
+        "cucumber-pretty": "^1.5.2",
         "expect": "^24.9.0",
         "protractor-cucumber-framework": "^6.1.3"
     },
