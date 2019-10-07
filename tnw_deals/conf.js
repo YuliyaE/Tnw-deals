@@ -16,6 +16,7 @@ exports.config = {
     cucumberOpts: {
         require: 'steps/*.js',
         tags:  [
+            '@all',
             '@add',
             '@remove'
         ]

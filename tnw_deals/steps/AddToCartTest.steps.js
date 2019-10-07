@@ -8,7 +8,7 @@ Then('Check product name', function () {
         return ProductPage.clickAddToCart().then(() => {
             return ProductPage.getActualProductName();
         }).then((actualName) => {
-            expect(expectedProductName).toEqual(actualName);
+            expect(actualName).toEqual(expectedProductName);
         })
     });
 })
