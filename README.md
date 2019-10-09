@@ -1,16 +1,14 @@
 # Tnw-deals
 
-___
-
 ### Installation
 In order to install all dependencies:
 
-* npm install 
+* `npm install`
 *or*
-* npm ci
+* `npm ci`
 
 ___
 
 ### Run tests
-* protractor conf.js --cucumberOpts.tags="@addproduct"
-* protractor conf.js --cucumberOpts.tags="@removeproduct"
+* `protractor conf.js --cucumberOpts.tags="@addproduct`"
+* `protractor conf.js --cucumberOpts.tags="@removeproduct`"
