@@ -4,23 +4,22 @@ exports.config = {
     frameworkPath: 'node_modules/protractor-cucumber-framework',
     seleniumAddress: 'http://localhost:4444/wd/hub',
     directConnect: true,
-   
+
     globalTimeout: 100000,
     getPageTimeout: 60000,
     allScriptsTimeout: 500000,
 
     specs: [
-        'TNW_tests/features/*.feature',
+        'tnw_deals/TNW_tests/features/*.feature',
     ],
 
     cucumberOpts: {
-    
-        require: 'steps/*.js',
-        tags:  [
+        require: 'tnw_deals/steps/*.js',
+        tags: [
             '@all',
-            '@add',
-            '@remove'
+            '@addproduct or @removeproduct'
         ],
+        // format: 'pretty',
     },
 
     onPrepare: function () {

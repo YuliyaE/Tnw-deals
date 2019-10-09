@@ -10,5 +10,7 @@ Then('Check product name', function () {
         }).then((actualName) => {
             expect(actualName).toEqual(expectedProductName);
         })
-    });
+    }).then(() => {
+        return ProductPage.removeProductFromCart();
+    })
 })

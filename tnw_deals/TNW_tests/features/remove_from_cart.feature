@@ -1,4 +1,4 @@
-@all @remove
+@all @removeproduct
 Feature: TNW Deals
 
 Scenario: Remove from cart test

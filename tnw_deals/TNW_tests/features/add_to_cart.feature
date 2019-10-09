@@ -1,4 +1,4 @@
-@all @add 
+@all @addproduct
 Feature: TNW Deals
 
 Scenario: Add to cart test
